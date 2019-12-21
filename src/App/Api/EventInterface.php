@@ -30,4 +30,12 @@ interface EventInterface
      * @author Bjørn Snoen <bjorn.snoen@gmail.com>
      */
     public function getEventText(): string;
+
+    /**
+     * What kind of thing happened?
+     *
+     * @return string
+     * @author Bjørn Snoen <bjorn.snoen@visma.com>
+     */
+    public function getEventType(): string;
 }

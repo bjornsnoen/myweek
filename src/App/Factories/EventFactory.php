@@ -18,8 +18,8 @@ use MyWeek\App\Model\Event;
  */
 class EventFactory implements EventFactoryInterface
 {
-    public function create(DateTimeInterface $dateTime, string $eventText): EventInterface
+    public function create(DateTimeInterface $dateTime, string $eventText, string $eventType): EventInterface
     {
-        return new Event($dateTime, $eventText);
+        return new Event($dateTime, $eventText, $eventType);
     }
 }

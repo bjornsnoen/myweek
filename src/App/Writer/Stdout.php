@@ -7,6 +7,7 @@
 
 namespace MyWeek\App\Writer;
 
+use MyWeek\App\Api\EventInterface;
 use MyWeek\App\Api\EventProviderProviderInterface;
 use MyWeek\App\Api\WriterInterface;
 
@@ -27,8 +28,14 @@ class Stdout implements WriterInterface
      */
     public function write()
     {
+        /** @var EventInterface $event */
         foreach ($this->eventProviderProvider->aggregateEvents() as $event) {
-            echo sprintf("%s: %s\n", $event->getTime()->format('Y-m-d H:i'), $event->getEventText());
+            echo sprintf(
+                "%s: (%s) %s\n",
+                $event->getTime()->format('Y-m-d H:i'),
+                $event->getEventType(),
+                $event->getEventText()
+            );
         }
     }
 }

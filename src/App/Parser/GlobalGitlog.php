@@ -26,10 +26,12 @@ use Webmozart\Assert\Assert;
 class GlobalGitlog implements EventProviderInterface, InstallerInterface, RequiresInstallInterface
 {
     private const GITLOG_DATE_FORMAT = "D, d M Y H:i:s O";
+
     /**
      * @var EventFactoryInterface
      */
     private EventFactoryInterface $eventFactory;
+
     /**
      * @var SymfonyStyle
      */
@@ -39,14 +41,17 @@ class GlobalGitlog implements EventProviderInterface, InstallerInterface, Requir
      * @var FilesystemInterface
      */
     private FilesystemInterface $filesystem;
+
     /**
      * @var string
      */
     private string $resourceLocation;
+
     /**
      * @var ExecutionEnablerInterface
      */
     private ExecutionEnablerInterface $executionEnabler;
+
     /**
      * @var string
      */
@@ -108,7 +113,7 @@ class GlobalGitlog implements EventProviderInterface, InstallerInterface, Requir
             $text = trim(substr($commit, $lengthOfGitlogStamp + 1));
             $time = DateTimeImmutable::createFromFormat(self::GITLOG_DATE_FORMAT, $timestamp);
             if ($time >= $lastMonday) {
-                yield $this->eventFactory->create($time, $text);
+                yield $this->eventFactory->create($time, $text, 'Git commit');
             }
         }
     }
