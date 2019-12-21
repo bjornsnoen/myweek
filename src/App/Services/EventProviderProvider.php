@@ -55,8 +55,6 @@ class EventProviderProvider implements EventProviderProviderInterface
     /**
      * @inheritDoc
      *
-     * @param bool $sorted
-     * @return Generator
      * @throws InstallFailedException
      */
     public function aggregateEvents(bool $sorted = true): Generator

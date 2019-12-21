@@ -20,16 +20,21 @@ class Event implements EventInterface
      * @var string
      */
     private string $eventText;
+    /**
+     * @var string
+     */
+    private string $eventType;
 
     /**
      * Event constructor.
      * @param DateTimeInterface $dateTime
      * @param string $eventText
      */
-    public function __construct(DateTimeInterface $dateTime, string $eventText)
+    public function __construct(DateTimeInterface $dateTime, string $eventText, string $eventType)
     {
         $this->dateTime = $dateTime;
         $this->eventText = $eventText;
+        $this->eventType = $eventType;
     }
 
     /**
@@ -46,5 +51,13 @@ class Event implements EventInterface
     public function getEventText(): string
     {
         return $this->eventText;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getEventType(): string
+    {
+        return $this->eventType;
     }
 }

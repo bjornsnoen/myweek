@@ -22,7 +22,7 @@ interface EventProviderProviderInterface
      * @param bool $sorted
      *
      * @return Generator
-     *
+     * @psalm-return Generator<\MyWeek\App\Api\EventInterface>
      * @author Bjørn Snoen <bjorn.snoen@gmail.com>
      */
     public function aggregateEvents(bool $sorted = true): Generator;
