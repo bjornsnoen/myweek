@@ -1,0 +1,18 @@
+#!/bin/bash
+
+FILE=~/global-gitlog.txt
+
+line=$(git log -1 --format=format:"%aD: %s")
+
+if [ -f "$FILE" ]; then
+    lastlogdate=$(head -n 1 $FILE | awk '{ print $1 $2 $3 }')
+    thislogdate=$(echo $line | awk '{ print $1 $2 $3 }')
+    if [ "$lastlogdate" != "$thislogdate" ]; then
+        sed -i '1s/^/\n/' $FILE
+    fi
+else
+    echo "Creating global gitlog in home directory"
+    touch $FILE
+fi
+
+echo $line | cat - $FILE > ~/temp-git-log && mv ~/temp-git-log $FILE

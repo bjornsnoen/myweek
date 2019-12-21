@@ -1,0 +1,15 @@
+#!/usr/bin/env php
+<?php
+/**
+ * @license Proprietary
+ * @author Bjørn Snoen <bjorn.snoen@visma.com>
+ * @copyright Visma Digital Commerce 2019
+ */
+
+
+require_once dirname(__FILE__) . '/../vendor/autoload.php';
+
+Dotenv\Dotenv::createImmutable(dirname(__FILE__) . '/../')->load();
+
+\MyWeek\App::createWriter(\MyWeek\App\Api\WriterInterface::class)->write();
+
