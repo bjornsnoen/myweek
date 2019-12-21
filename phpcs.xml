@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/squizlabs/PHP_CodeSniffer/0afebf16a2e7f1e434920fa976253576151effe9/phpcs.xsd">
+    <file>src</file>
+
+    <rule ref="PSR12">
+    </rule>
+</ruleset>

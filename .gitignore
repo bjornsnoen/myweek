@@ -1,0 +1,5 @@
+.env
+vendor/
+composer.lock
+lsp/
+.phpunit.result.cache
