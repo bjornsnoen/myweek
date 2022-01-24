@@ -1,13 +1,14 @@
 {
+    "name": "bjornsnoen/myweek",
     "require": {
         "php": "^7.4 | ^8.0",
         "php-di/php-di": "^6.0",
-        "vlucas/phpdotenv": "^4.1",
         "illuminate/support": "^6.8",
         "symfony/console": "^5.0",
         "league/flysystem": "^1.0",
         "symfony/process": "^5.0",
-        "phpro/grumphp": "^1.4"
+        "phpro/grumphp": "^1.4",
+        "composer-runtime-api": "^2.2"
     },
     "autoload": {
         "psr-4": {
@@ -18,5 +19,13 @@
         "psy/psysh": "^0.9.12",
         "squizlabs/php_codesniffer": "^3.5",
         "vimeo/psalm": "^3.7"
+    },
+    "bin": [
+        "bin/myweek"
+    ],
+    "config": {
+        "allow-plugins": {
+            "phpro/grumphp": true
+        }
     }
 }

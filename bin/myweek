@@ -1,9 +1,7 @@
 #!/usr/bin/env php
 <?php
 
-require_once dirname(__FILE__) . '/../vendor/autoload.php';
-
-Dotenv\Dotenv::createImmutable(dirname(__FILE__) . '/../')->load();
+include $_composer_autoload_path ?? __DIR__ . '/../vendor/autoload.php';
 
 \MyWeek\App::createWriter(\MyWeek\App\Api\WriterInterface::class)->write();
 
