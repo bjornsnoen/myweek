@@ -1,5 +1,6 @@
 {
     "name": "bjornsnoen/myweek",
+    "version": "1.0.0",
     "require": {
         "php": "^7.4 | ^8.0",
         "php-di/php-di": "^6.0",
